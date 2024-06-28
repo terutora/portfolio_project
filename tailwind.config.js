@@ -3,9 +3,16 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', 
+  darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          '"Noto Sans JP"',
+          'sans-serif',
+          // 他のフォールバックフォント
+        ],
+      },
       colors: {
         'main-black': '#0A0A0A',
         'accent-gold': '#FFD700',
