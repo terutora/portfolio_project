@@ -1,54 +1,44 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
 import ProjectCard from '../../components/projects/ProjectCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SearchIcon } from '@heroicons/react/solid';
+import { projects } from '../../data/projects';
 
-export async function getStaticProps() {
-  // 実際のAPIエンドポイントに置き換えてください
-  const res = await fetch('https://api.example.com/projects');
-  const projects = await res.json();
-
+export function getStaticProps() {
   return {
     props: {
       projects,
     },
-    revalidate: 60, // 60秒ごとにISRで再生成
   };
 }
 
 export default function ProjectsPage({ projects }) {
-  const [filteredProjects, setFilteredProjects] = useState(projects);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
 
-  const filterProjects = (category) => {
-    setActiveFilter(category);
-    if (category === 'all') {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(projects.filter(project => project.category === category));
-    }
-  };
+  const categories = useMemo(() => ['all', ...new Set(projects.map(project => project.category))], [projects]);
+
+  const filteredProjects = useMemo(() => {
+    return projects.filter(project => 
+      (activeFilter === 'all' || project.category === activeFilter) &&
+      (project.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+       project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+       project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase())))
+    );
+  }, [projects, activeFilter, searchTerm]);
 
   const handleSearch = (e) => {
-    const term = e.target.value.toLowerCase();
-    setSearchTerm(term);
-    setFilteredProjects(projects.filter(project => 
-      project.title.toLowerCase().includes(term) || 
-      project.description.toLowerCase().includes(term)
-    ));
+    setSearchTerm(e.target.value);
   };
-
-  const categories = ['all', ...new Set(projects.map(project => project.category))];
 
   return (
     <Layout>
       <Head>
         <title>プロジェクト一覧 | Yukis Portfolio</title>
-        <meta name="description" content="Yukiのプロジェクト一覧です。Webアプリケーション、モバイルアプリ、データ分析プロジェクトなどを紹介しています。" />
-        <meta name="keywords" content="ポートフォリオ, プロジェクト, Webアプリ, モバイルアプリ, データ分析" />
+        <meta name="description" content="Yukiのプロジェクト一覧です。AI、ブロックチェーン、AR、IoT、NLPなど、最新技術を活用したプロジェクトを紹介しています。" />
+        <meta name="keywords" content="ポートフォリオ, プロジェクト, AI, ブロックチェーン, AR, IoT, NLP, 機械学習" />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.h1
@@ -64,7 +54,7 @@ export default function ProjectsPage({ projects }) {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => filterProjects(category)}
+                onClick={() => setActiveFilter(category)}
                 className={`px-4 py-2 rounded-full ${
                   activeFilter === category 
                     ? 'bg-accent-gold text-main-black' 

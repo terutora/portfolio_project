@@ -4,34 +4,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, ExternalLinkIcon } from '@heroicons/react/solid';
+import { ArrowLeftIcon, ExternalLinkIcon, CalendarIcon, UsersIcon } from '@heroicons/react/solid';
+import { projects } from '../../data/projects';
 
 export async function getStaticPaths() {
-  // 実際のAPIエンドポイントに置き換えてください
-  const res = await fetch('https://api.example.com/projects');
-  const projects = await res.json();
-
   const paths = projects.map((project) => ({
     params: { id: project.id.toString() },
   }));
 
-  return { paths, fallback: 'blocking' };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  // 実際のAPIエンドポイントに置き換えてください
-  const res = await fetch(`https://api.example.com/projects/${params.id}`);
-  const project = await res.json();
-
-  const relatedRes = await fetch(`https://api.example.com/projects?category=${project.category}&_limit=3`);
-  const relatedProjects = await relatedRes.json();
+  const project = projects.find(p => p.id.toString() === params.id);
+  const relatedProjects = projects
+    .filter(p => p.category === project.category && p.id !== project.id)
+    .slice(0, 3);
 
   return {
     props: {
       project,
-      relatedProjects: relatedProjects.filter(p => p.id !== project.id),
+      relatedProjects,
     },
-    revalidate: 60,
   };
 }
 
@@ -59,7 +53,9 @@ export default function ProjectDetail({ project, relatedProjects }) {
             "author": {
               "@type": "Person",
               "name": "Yuki"
-            }
+            },
+            "datePublished": project.startDate,
+            "dateModified": project.endDate,
           })}
         </script>
       </Head>
@@ -101,7 +97,19 @@ export default function ProjectDetail({ project, relatedProjects }) {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <h2 className="text-2xl font-semibold text-accent-silver mb-4">プロジェクト概要</h2>
-          <p className="text-text-offwhite mb-4">{project.description}</p>
+          <p className="text-text-offwhite mb-4">{project.longDescription}</p>
+          <div className="flex flex-wrap gap-4 mb-4">
+            <div className="flex items-center text-accent-silver">
+              <CalendarIcon className="h-5 w-5 mr-2" />
+              <span>{project.startDate} - {project.endDate}</span>
+            </div>
+            <div className="flex items-center text-accent-silver">
+              <UsersIcon className="h-5 w-5 mr-2" />
+              <span>チームサイズ: {project.teamSize}人</span>
+            </div>
+          </div>
+          <h3 className="text-xl font-semibold text-accent-silver mb-2">役割</h3>
+          <p className="text-text-offwhite mb-4">{project.role}</p>
           <h3 className="text-xl font-semibold text-accent-silver mb-2">使用技術</h3>
           <div className="flex flex-wrap gap-2 mb-4">
             {project.technologies.map((tech, index) => (

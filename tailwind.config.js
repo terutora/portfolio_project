@@ -3,6 +3,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', 
   theme: {
     extend: {
       colors: {
@@ -11,7 +12,7 @@ module.exports = {
         'accent-silver': '#C0C0C0',
         'text-offwhite': '#F5F5F5',
       },
-      backgroundImage: {
+      backgroundColor: {
         'gradient-dark': 'linear-gradient(to bottom, #0A0A0A, #1A1A1A)',
       },
     },

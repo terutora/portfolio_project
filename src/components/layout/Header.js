@@ -19,17 +19,19 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
-                <Link href="/">
-                  <a className="text-accent-gold font-bold text-xl">Your Name</a>
+                <Link href="/" className="text-accent-gold font-bold text-xl">
+                  Your Name
                 </Link>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   {navigation.map((item) => (
-                    <Link key={item.name} href={item.href}>
-                      <a className="text-text-offwhite hover:text-accent-gold px-3 py-2 rounded-md text-sm font-medium">
-                        {item.name}
-                      </a>
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-text-offwhite hover:text-accent-gold px-3 py-2 rounded-md text-sm font-medium"
+                    >
+                      {item.name}
                     </Link>
                   ))}
                 </div>
@@ -50,10 +52,12 @@ export default function Header() {
           <Disclosure.Panel className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navigation.map((item) => (
-                <Link key={item.name} href={item.href}>
-                  <a className="text-text-offwhite hover:text-accent-gold block px-3 py-2 rounded-md text-base font-medium">
-                    {item.name}
-                  </a>
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-text-offwhite hover:text-accent-gold block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {item.name}
                 </Link>
               ))}
             </div>
