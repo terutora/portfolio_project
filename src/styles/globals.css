@@ -6,6 +6,8 @@
 
 @layer base {
   body {
-    @apply bg-gradient-dark text-text-offwhite font-['Poppins'];
+    @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-['Poppins'];
   }
 }
+
+/* その他のカスタムスタイル */

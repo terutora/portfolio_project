@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Link from 'next/link'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -13,13 +12,13 @@ const navigation = [
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="bg-main-black">
+    <Disclosure as="nav" className="bg-white dark:bg-gray-800 shadow">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
-                <Link href="/" className="text-accent-gold font-bold text-xl">
+                <Link href="/" className="text-gray-900 dark:text-gray-100 font-bold text-xl">
                   Your Name
                 </Link>
               </div>
@@ -29,7 +28,7 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-text-offwhite hover:text-accent-gold px-3 py-2 rounded-md text-sm font-medium"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
                       {item.name}
                     </Link>
@@ -37,7 +36,7 @@ export default function Header() {
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
-                <Disclosure.Button className="bg-main-black inline-flex items-center justify-center p-2 rounded-md text-text-offwhite hover:text-accent-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-main-black focus:ring-white">
+                <Disclosure.Button className="bg-white dark:bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -55,7 +54,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-text-offwhite hover:text-accent-gold block px-3 py-2 rounded-md text-base font-medium"
+                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   {item.name}
                 </Link>
