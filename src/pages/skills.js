@@ -1,18 +1,19 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { FaStar, FaRegStar, FaHtml5, FaCss3Alt, FaReact, FaVuejs, FaNodeJs, FaPython, FaAws, FaDocker, FaSlack, FaFigma, FaGit } from 'react-icons/fa';
 import { SiJavascript, SiNextdotjs, SiTailwindcss, SiExpress, SiDjango, SiMysql, SiMongodb, SiGooglecloud, SiMicrosoftazure, SiHeroku, SiVisualstudiocode, SiAdobephotoshop, SiAdobeillustrator } from 'react-icons/si';
-import { TbBrandVscode } from 'react-icons/tb';
+import { TbSql } from 'react-icons/tb';
 
 const skillCategories = [
   {
     name: "フロントエンド",
     skills: [
-      { name: "HTML5", icon: FaHtml5, level: 4 },
-      { name: "CSS3", icon: FaCss3Alt, level: 4 },
-      { name: "JavaScript", icon: SiJavascript, level: 4 },
-      { name: "React", icon: FaReact, level: 4 },
+      { name: "HTML5", icon: FaHtml5, level: 3 },
+      { name: "CSS3", icon: FaCss3Alt, level: 3 },
+      { name: "JavaScript", icon: SiJavascript, level: 3 },
+      { name: "React", icon: FaReact, level: 3 },
       { name: "Vue.js", icon: FaVuejs, level: 3 },
       { name: "Next.js", icon: SiNextdotjs, level: 3 },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 3 },
@@ -21,7 +22,7 @@ const skillCategories = [
   {
     name: "バックエンド",
     skills: [
-      { name: "Node.js", icon: FaNodeJs, level: 4 },
+      { name: "Node.js", icon: FaNodeJs, level: 3 },
       { name: "Express.js", icon: SiExpress, level: 3 },
       { name: "Python", icon: FaPython, level: 3 },
       { name: "Django", icon: SiDjango, level: 3 },
@@ -30,7 +31,7 @@ const skillCategories = [
   {
     name: "データベース/データ処理",
     skills: [
-      { name: "SQL", icon: SiMysql, level: 3 },
+      { name: "SQL", icon: TbSql, level: 3 },
       { name: "MySQL", icon: SiMysql, level: 3 },
       { name: "MongoDB", icon: SiMongodb, level: 3 },
     ]
@@ -40,7 +41,7 @@ const skillCategories = [
     skills: [
       { name: "Git", icon: FaGit, level: 4 },
       { name: "Docker", icon: FaDocker, level: 3 },
-      { name: "AWS", icon: FaAws, level: 3 },
+      { name: "AWS", icon: FaAws, level: 2 },
       { name: "Google Cloud Platform", icon: SiGooglecloud, level: 2 },
       { name: "Microsoft Azure", icon: SiMicrosoftazure, level: 2 },
       { name: "Heroku", icon: SiHeroku, level: 3 },
@@ -50,7 +51,7 @@ const skillCategories = [
     name: "ツール/その他",
     skills: [
       { name: "VS Code", icon: SiVisualstudiocode, level: 4 },
-      { name: "Slack", icon: FaSlack, level: 4 },
+      { name: "Slack", icon: FaSlack, level: 5 },
       { name: "Figma", icon: FaFigma, level: 3 },
       { name: "Photoshop", icon: SiAdobephotoshop, level: 3 },
       { name: "Illustrator", icon: SiAdobeillustrator, level: 2 },
@@ -99,6 +100,10 @@ const levelDescriptions = [
   
     return (
       <Layout>
+        <Head>
+        <title>Skills | Cheese&apos;folio</title>
+        <meta name="description" content="Get in touch with Yuki for project inquiries, collaborations, or any questions you may have." />
+        </Head>
         <div className="max-w-6xl mx-auto px-4 py-8">
           <motion.h1
             className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white"

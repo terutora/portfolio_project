@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   return (
     <div className={`min-h-screen flex flex-col ${isDarkMode ? 'dark' : ''}`}>
       <Head>
-        <title>Yukis Portfolio</title>
+        <title>Cheese&apos;folio</title>
         <meta name="description" content="Yuki's professional portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

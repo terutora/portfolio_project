@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-main-black">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <p className="text-text-offwhite">&copy; 2024 Your Name. All rights reserved.</p>
+          <p className="text-text-offwhite">&copy; 2024 Cheese. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="text-text-offwhite hover:text-accent-gold">
               <span className="sr-only">GitHub</span>

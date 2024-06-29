@@ -39,7 +39,7 @@ export default function ProjectDetail({ project, relatedProjects }) {
   return (
     <Layout>
       <Head>
-        <title>{`${project.title} | Yuki's Portfolio`}</title>
+        <title>{`${project.title} | Cheese'folio`}</title>
         <meta name="description" content={project.description} />
         <meta name="keywords" content={project.technologies.join(', ')} />
         <script type="application/ld+json">

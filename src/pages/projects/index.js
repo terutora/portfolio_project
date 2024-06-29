@@ -17,7 +17,7 @@ export default function ProjectsPage({ projects }) {
   return (
     <Layout>
       <Head>
-        <title>プロジェクト一覧 | Yukis Portfolio</title>
+        <title>Projects | Cheese&apos;folio</title>
         <meta name="description" content="Yukiのプロジェクト一覧です。" />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

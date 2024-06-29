@@ -19,7 +19,7 @@ export default function Header() {
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <Link href="/" className="text-gray-900 dark:text-gray-100 font-bold text-xl">
-                  Your Name
+                  Cheese&apos;folio
                 </Link>
               </div>
               <div className="hidden md:block">

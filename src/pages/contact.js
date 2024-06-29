@@ -55,7 +55,7 @@ export default function Contact() {
   return (
     <Layout>
       <Head>
-        <title>Contact | Yukis Portfolio</title>
+        <title>Contact | Cheese&apos;folio</title>
         <meta name="description" content="Get in touch with Yuki for project inquiries, collaborations, or any questions you may have." />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

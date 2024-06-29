@@ -26,7 +26,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  私は美しく機能的なウェブアプリケーションの作成に特化した情熱的な開発者です。私のプロジェクトとスキルをご覧いただき、あなたのチームにどのような価値をもたらせるか、ぜひご確認ください。
+                  私は機能的なウェブアプリケーションの作成に特化した開発者です。私のプロジェクトとスキルをご覧いただき、あなたのチームにどのような価値をもたらせるか、ぜひご確認ください。
                 </motion.p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
