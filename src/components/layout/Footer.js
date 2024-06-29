@@ -7,15 +7,11 @@ export default function Footer() {
         <div className="flex justify-between items-center">
           <p className="text-text-offwhite">&copy; 2024 Cheese. All rights reserved.</p>
           <div className="flex space-x-6">
-            <a href="#" className="text-text-offwhite hover:text-accent-gold">
+            <a href="https://github.com/terutora" className="text-text-offwhite hover:text-accent-gold">
               <span className="sr-only">GitHub</span>
               <FaGithub className="h-6 w-6" />
             </a>
-            <a href="#" className="text-text-offwhite hover:text-accent-gold">
-              <span className="sr-only">LinkedIn</span>
-              <FaLinkedin className="h-6 w-6" />
-            </a>
-            <a href="#" className="text-text-offwhite hover:text-accent-gold">
+            <a href="https://x.com/terateraion" className="text-text-offwhite hover:text-accent-gold">
               <span className="sr-only">Twitter</span>
               <FaTwitter className="h-6 w-6" />
             </a>

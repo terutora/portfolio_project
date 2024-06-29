@@ -79,11 +79,11 @@ export default function Contact() {
             </p>
             <div className="flex items-center mb-2">
               <MailIcon className="h-5 w-5 text-theme-primary-light dark:text-theme-primary-dark mr-2" />
-              <span className="text-gray-700 dark:text-gray-300">email@example.com</span>
+              <span className="text-gray-700 dark:text-gray-300">cheese877engineer@gmail.com</span>
             </div>
             <div className="flex items-center">
               <PhoneIcon className="h-5 w-5 text-theme-primary-light dark:text-theme-primary-dark mr-2" />
-              <span className="text-gray-700 dark:text-gray-300">+81 90-1234-5678</span>
+              <span className="text-gray-700 dark:text-gray-300">070-4394-2167</span>
             </div>
           </motion.div>
           <motion.div
