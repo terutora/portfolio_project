@@ -17,8 +17,8 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="block xl:inline">ようこそ、私の</span>{' '}
-                  <span className="block text-indigo-600 xl:inline">ポートフォリオへ</span>
+                  <span className="block x:inline">ようこそ、私の</span>{' '}
+                  <span className="block text-indigo-600 x:inline">ポートフォリオへ</span>
                 </motion.h1>
                 <motion.p 
                   className="mt-3 text-base text-gray-700 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
@@ -48,16 +48,17 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <div className="relative h-64 sm:h-72 md:h-96 lg:h-full">
-                <Image
-                  src="/images/profile.jpg" // プロフィール画像のパスを指定してください
-                  alt="プロフィール画像"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-lg"
-                />
-              </div>
-              <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+              <div className="w-full h-96 relative overflow-hidden">
+              <Image
+                src="/images/profile.jpg"
+                alt="プロフィール画像"
+                width={500}
+                height={500}
+                objectFit="cover"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+              <div className="mt-14 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">スキルハイライト</h2>
                 <ul className="space-y-2">
                   <li className="flex items-center">
