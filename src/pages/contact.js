@@ -60,7 +60,7 @@ export default function Contact() {
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.h1
-          className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8"
+          className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -78,11 +78,11 @@ export default function Contact() {
               プロジェクトの依頼、協力のご提案、またはご質問がありましたら、お気軽にお問い合わせください。
             </p>
             <div className="flex items-center mb-2">
-              <MailIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
+              <MailIcon className="h-5 w-5 text-theme-primary-light dark:text-theme-primary-dark mr-2" />
               <span className="text-gray-700 dark:text-gray-300">email@example.com</span>
             </div>
             <div className="flex items-center">
-              <PhoneIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
+              <PhoneIcon className="h-5 w-5 text-theme-primary-light dark:text-theme-primary-dark mr-2" />
               <span className="text-gray-700 dark:text-gray-300">+81 90-1234-5678</span>
             </div>
           </motion.div>
@@ -102,7 +102,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-theme-primary-light dark:focus:ring-theme-primary-dark focus:border-theme-primary-light dark:focus:border-theme-primary-dark"
                 />
                 {errors.name && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name}</p>}
               </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-theme-primary-light dark:focus:ring-theme-primary-dark focus:border-theme-primary-light dark:focus:border-theme-primary-dark"
                 />
                 {errors.email && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>}
               </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-theme-primary-light dark:focus:ring-theme-primary-dark focus:border-theme-primary-light dark:focus:border-theme-primary-dark"
                 ></textarea>
                 {errors.message && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.message}</p>}
               </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300"
+                  className="w-full bg-theme-primary-light dark:bg-theme-primary-dark text-white py-2 px-4 rounded-md hover:bg-yellow-500 dark:hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-primary-light dark:focus:ring-theme-primary-dark transition duration-300"
                 >
                   {isSubmitting ? '送信中...' : '送信'}
                 </button>

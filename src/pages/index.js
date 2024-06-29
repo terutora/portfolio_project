@@ -17,8 +17,8 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="block x:inline">ようこそ、私の</span>{' '}
-                  <span className="block text-indigo-600 x:inline">ポートフォリオへ</span>
+                  <span className="block">ようこそ、私の</span>{' '}
+                  <span className="block text-theme-primary-light dark:text-theme-primary-dark">ポートフォリオへ</span>
                 </motion.h1>
                 <motion.p 
                   className="mt-3 text-base text-gray-700 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
@@ -30,12 +30,12 @@ export default function Home() {
                 </motion.p>
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
-                    <Link href="/projects" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                    <Link href="/projects" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-theme-primary-light dark:bg-theme-primary-dark hover:bg-yellow-500 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10 transition duration-300">
                       プロジェクト一覧
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <Link href="/contact" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
+                    <Link href="/contact" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-theme-primary-light dark:text-theme-primary-dark bg-yellow-100 dark:bg-indigo-100 hover:bg-yellow-200 dark:hover:bg-indigo-200 md:py-4 md:text-lg md:px-10 transition duration-300">
                       お問い合わせ
                     </Link>
                   </div>

@@ -18,6 +18,10 @@ module.exports = {
         'accent-gold': '#FFD700',
         'accent-silver': '#C0C0C0',
         'text-offwhite': '#F5F5F5',
+        'theme-primary': {
+          light: '#FFD700', // 黄色 (ライトモード)
+          dark: '#4F46E5', // 青色 (ダークモード)
+        },
       },
       backgroundColor: {
         'gradient-dark': 'linear-gradient(to bottom, #0A0A0A, #1A1A1A)',
