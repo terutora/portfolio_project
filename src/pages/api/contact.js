@@ -44,7 +44,7 @@ export default async function handler(req, res) {
 
     // Send auto-reply to the user
     await transporter.sendMail({
-      from: `"Yuki's Portfolio" <${process.env.SMTP_USER}>`,
+      from: `"Cheese's Portfolio" <${process.env.SMTP_USER}>`,
       to: email,
       subject: 'Thank you for your message',
       text: `
@@ -59,7 +59,7 @@ export default async function handler(req, res) {
         <h1>Thank you for your message</h1>
         <p>Dear ${name},</p>
         <p>Thank you for contacting me. I have received your message and will get back to you as soon as possible.</p>
-        <p>Best regards,<br>Yuki</p>
+        <p>Best regards,<br>Cheese</p>
       `,
     });
 

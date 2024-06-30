@@ -52,7 +52,7 @@ export default function ProjectDetail({ project, relatedProjects }) {
             "operatingSystem": "Web",
             "author": {
               "@type": "Person",
-              "name": "Yuki"
+              "name": "Cheese"
             },
             "datePublished": project.startDate,
             "dateModified": project.endDate,
@@ -60,7 +60,10 @@ export default function ProjectDetail({ project, relatedProjects }) {
         </script>
       </Head>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <Link href="/projects" className="inline-flex items-center text-theme-primary-light dark:text-theme-primary-dark hover:text-yellow-500 dark:hover:text-indigo-400 mb-6 transition duration-300">
+        <Link 
+          href="/projects"
+          className="inline-flex items-center text-theme-primary-light dark:text-theme-primary-dark hover:text-yellow-500 dark:hover:text-indigo-400 mb-6 transition duration-300"
+        >
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           プロジェクト一覧に戻る
         </Link>
