@@ -29,17 +29,16 @@ export const skillCategories = [
     skills: [
       { name: "SQL", icon: TbSql, level: 3 },
       { name: "MySQL", icon: SiMysql, level: 3 },
-      { name: "MongoDB", icon: SiMongodb, level: 3 },
+      { name: "MongoDB", icon: SiMongodb, level: 2 },
     ]
   },
   {
     name: "DevOps/インフラ",
     skills: [
       { name: "Git", icon: FaGit, level: 4 },
-      { name: "Docker", icon: FaDocker, level: 3 },
-      { name: "AWS", icon: FaAws, level: 2 },
-      { name: "Google Cloud Platform", icon: SiGooglecloud, level: 2 },
-      { name: "Microsoft Azure", icon: SiMicrosoftazure, level: 2 },
+      { name: "Docker", icon: FaDocker, level: 2 },
+      { name: "AWS", icon: FaAws, level: 1 },
+      { name: "Microsoft Azure", icon: SiMicrosoftazure, level: 2},
       { name: "Heroku", icon: SiHeroku, level: 3 },
     ]
   },
@@ -56,6 +55,7 @@ export const skillCategories = [
 ];
 
 export const certifications = [
+  /*例
     {
       name: "AWS Certified Solutions Architect - Associate",
       issuer: "Amazon Web Services",
@@ -66,5 +66,5 @@ export const certifications = [
       issuer: "Linux Professional Institute",
       date: "2022年10月"
     },
-    // 他の資格を追加
+  */
 ];

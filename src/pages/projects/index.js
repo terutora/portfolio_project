@@ -82,7 +82,7 @@ export default function ProjectsPage({ projects }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          プロジェクト
+          プロジェクト一覧
         </motion.h1>
         <div className="mb-8">
           <div className="flex flex-wrap justify-center gap-4 mb-4">
@@ -112,35 +112,33 @@ export default function ProjectsPage({ projects }) {
           </div>
         </div>
         <AnimatePresence>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1
-                }
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1
               }
-            }}
-          >
-            {filteredProjects.map((project) => (
-              project && project.id ? (
-                <motion.div
-                  key={project.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0 }
-                  }}
-                >
-                  <ProjectCard project={project} />
-                </motion.div>
-              ) : null
-            ))}
-          </motion.div>
-        </AnimatePresence>
+            }
+          }}
+        >
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
         {filteredProjects.length === 0 && (
           <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
             該当するプロジェクトが見つかりませんでした。
