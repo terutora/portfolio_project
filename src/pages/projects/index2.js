@@ -5,7 +5,7 @@ import ProjectCard from '../../components/project/ProjectCard';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SearchIcon } from '@heroicons/react/solid';
 import axios from 'axios';
-
+ 
 export async function getStaticProps() {
   try {
     const res = await axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/projects?populate=*`);

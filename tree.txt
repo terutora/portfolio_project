@@ -1,0 +1,58 @@
+ディレクトリ構造
+
+portfolio_project/
+│
+├── .next/
+│
+├── node_modeules/
+│
+├── public/
+│   └── images/
+│       └── profile.jpg
+│
+├── src/
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Layout.js
+│   │   │   ├── Header.js
+│   │   │   └── Footer.js
+│   │   ├── project/
+│   │   │   ├── ProjectList.js
+│   │   │   └── ProjectCard.js
+│   │   ├── blog/
+│   │   │   ├── BlogPostCard.js
+│   │   │   └── Pagination.js
+│   │   └── ThemeToggle.js
+│   │
+│   ├── pages/
+│   │   ├── _app.js
+│   │   ├── _document.js
+│   │   ├── index.js
+│   │   ├── projects/
+│   │   │   ├── index2.js
+│   │   │   └── [id].js
+│   │   ├── api/
+│   │   │   └── contact.js
+│   │   ├── blog.js
+│   │   ├── skills.js
+│   │   └── contact.js
+│   │
+│   ├── styles/
+│   │   └── globals.css
+│   │
+│   ├── contexts/
+│   │   └── ThemeContext.js
+│   │
+│   └── data/
+│       ├── projects.js
+│       └── skills.js
+│
+├── strapi-backend/
+│
+├── .env.local
+├── .gitignore
+├── next.config.js
+├── package.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js

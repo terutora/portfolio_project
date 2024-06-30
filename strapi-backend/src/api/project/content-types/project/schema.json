@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Desecription": {
+    "desecription": {
       "type": "blocks"
     },
-    "Image": {
+    "imageUrl": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -29,29 +29,37 @@
         "audios"
       ]
     },
-    "Category": {
+    "category": {
       "type": "enumeration",
       "enum": [
-        "Ex:",
         "Web",
         "Mobile",
         "AI"
       ]
     },
-    "Technologies": {
+    "technologies": {
       "type": "json"
     },
-    "StartData": {
+    "startData": {
       "type": "date"
     },
-    "EndDate": {
+    "endDate": {
       "type": "date"
     },
-    "GithubUrl": {
+    "githubUrl": {
       "type": "string"
     },
-    "LiveUrl": {
+    "liveUrl": {
       "type": "string"
+    },
+    "teamSize": {
+      "type": "integer"
+    },
+    "role": {
+      "type": "string"
+    },
+    "longDescription": {
+      "type": "text"
     }
   }
 }

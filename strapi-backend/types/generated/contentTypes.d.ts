@@ -374,15 +374,18 @@ export interface ApiProjectProject extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    Desecription: Attribute.Blocks;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    Category: Attribute.Enumeration<['Ex:', 'Web', 'Mobile', 'AI']>;
-    Technologies: Attribute.JSON;
-    StartData: Attribute.Date;
-    EndDate: Attribute.Date;
-    GithubUrl: Attribute.String;
-    LiveUrl: Attribute.String;
+    title: Attribute.String;
+    desecription: Attribute.Blocks;
+    imageUrl: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    category: Attribute.Enumeration<['Web', 'Mobile', 'AI']>;
+    technologies: Attribute.JSON;
+    startData: Attribute.Date;
+    endDate: Attribute.Date;
+    githubUrl: Attribute.String;
+    liveUrl: Attribute.String;
+    teamSize: Attribute.Integer;
+    role: Attribute.String;
+    longDescription: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
