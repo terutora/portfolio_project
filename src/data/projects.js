@@ -4,7 +4,7 @@ export const projects = [
       title: "IRfinder",
       description: "財務諸表チェックシステム",
       longDescription: "このプロジェクトでは、株式の財務諸表を自動的にチェックするシステムを開発しました。Pythonで財務諸表を自動的に入手します。フロントエンドはVue.jsで開発されています。バックエンドはExpress.jsで構築され、MySQLデータベースに財務データを保存しています。このシステムにより、株式投資家の財務分析プロセスが効率化され、投資判断の精度が向上しました。",
-      imageUrl: "/images/IRfinder.jpg",
+      imageUrl: "/images/IRfinder.png",
       category: "株式サイト",
       technologies: ["Python", "JavaScript", "Express.js", "Vue.js", "MySQL", "Heroku"],
       features: [
