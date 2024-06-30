@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
 import ProjectList from '../../components/project/ProjectList';
-import { projects } from '../data/projects';
+import { projects } from '../../data/projects';
 
 export function getStaticProps() {
   console.log('Static Props Projects:', projects); // デバッグ用ログ

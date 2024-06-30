@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, ExternalLinkIcon, CalendarIcon, UsersIcon } from '@heroicons/react/solid';
-import { projects } from '../data/projects';
+import { projects } from '../../data/projects';
 
 export async function getStaticPaths() {
   const paths = projects.map((project) => ({
