@@ -40,16 +40,30 @@ export default function Contact() {
     }
     setIsSubmitting(true);
     setErrors({});
-
-    // ここでフォームデータを送信するAPIを呼び出す
-    // 例: const response = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) });
-    
-    // 仮の非同期処理（実際のAPI呼び出しに置き換えてください）
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', message: '' });
+  
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error(data.message || 'Something went wrong');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -146,6 +160,9 @@ export default function Contact() {
             </form>
             {submitStatus === 'success' && (
               <p className="mt-4 text-green-600 dark:text-green-400">メッセージが正常に送信されました。ありがとうございます！</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="mt-4 text-red-600 dark:text-red-400">メッセージの送信中にエラーが発生しました。後でもう一度お試しください。</p>
             )}
           </motion.div>
         </div>
