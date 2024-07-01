@@ -141,7 +141,7 @@ export default function Contact() {
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
+                  rows="10"
                   value={formData.message}
                   onChange={handleChange}
                   className="mt-1 block w-full bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-theme-primary-light dark:focus:ring-theme-primary-dark focus:border-theme-primary-light dark:focus:border-theme-primary-dark"
