@@ -45,10 +45,22 @@ export default function BlogPage({ posts }) {
         <meta name="description" content="ZennとNoteで公開している技術記事やブログポストの一覧です。" />
       </Head>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-8">ブログ記事</h1>
+      <motion.h1
+          className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >ブログ記事
+        </motion.h1>
         
         {/* フィルターとサーチバー */}
+        
         <div className="mb-8 flex flex-wrap items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
           <div className="flex space-x-4 mb-4 sm:mb-0">
             <button
               onClick={() => { setFilter('all'); setCurrentPage(1); }}
@@ -69,6 +81,12 @@ export default function BlogPage({ posts }) {
               Note
             </button>
           </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
           <input
             type="text"
             placeholder="記事を検索..."
@@ -76,25 +94,27 @@ export default function BlogPage({ posts }) {
             onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
             className="w-full sm:w-64 px-4 py-2 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700"
           />
-        </div>
+          </motion.div>
+        </div>        
 
         {/* 記事リスト */}
         <motion.div
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
         >
           {currentPosts.map((post) => (
             <BlogPostCard key={post.id} post={post} />
-          ))}
-        </motion.div>
+          ))}        
 
         {filteredPosts.length === 0 && (
           <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
             該当する記事が見つかりませんでした。
           </p>
+          
         )}
+        </motion.div>
 
         {/* ページネーション */}
         <Pagination

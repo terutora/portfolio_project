@@ -55,7 +55,7 @@ export const skillCategories = [
 ];
 
 export const certifications = [
-  /*例
+  
     {
       name: "AWS Certified Solutions Architect - Associate",
       issuer: "Amazon Web Services",
@@ -66,5 +66,5 @@ export const certifications = [
       issuer: "Linux Professional Institute",
       date: "2022年10月"
     },
-  */
+  
 ];

@@ -1,10 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const ProjectList = ({ projects }) => {
   console.log('Projects:', projects); // デバッグ用ログ
 
   return (
+    <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {projects.map((project) => {
         console.log('Project:', project); // 各プロジェクトのデバッグ用ログ
@@ -25,6 +31,7 @@ const ProjectList = ({ projects }) => {
         );
       })}
     </div>
+    </motion.div>
   );
 };
 

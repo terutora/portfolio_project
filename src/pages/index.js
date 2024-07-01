@@ -22,12 +22,19 @@ export default function Home() {
                 </motion.h1>
                 <motion.p 
                   className="mt-3 text-base text-gray-700 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   私は機能的なウェブアプリケーションの作成に特化した開発者です。私のプロジェクトとスキルをご覧いただき、あなたのチームにどのような価値をもたらせるか、ぜひご確認ください。
                 </motion.p>
+                
+                <motion.div
+                  className="mt-3 text-base text-gray-700 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
                 <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                   <div className="rounded-md shadow">
                     <Link href="/projects" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-theme-primary-light dark:bg-theme-primary-dark hover:bg-yellow-500 dark:hover:bg-indigo-600 md:py-4 md:text-lg md:px-10 transition duration-300">
@@ -40,6 +47,7 @@ export default function Home() {
                     </Link>
                   </div>
                 </div>
+              </motion.div>
               </div>
             </main>
             <motion.div 

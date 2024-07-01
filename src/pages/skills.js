@@ -49,6 +49,11 @@ const CertificationCard = ({ certification }) => (
 );
 
 const SkillLevelDescription = () => (
+  <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+  >
   <div className="mt-12 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
     <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">スキルレベルの説明</h3>
     <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-400">
@@ -59,6 +64,7 @@ const SkillLevelDescription = () => (
       <li>5星 - エキスパート: 高度な知識を持ち、革新的なソリューションを提供できる</li>
     </ul>
   </div>
+  </motion.div>
 );
 
 export default function SkillsPage() {
@@ -78,6 +84,11 @@ export default function SkillsPage() {
         </motion.h1>
         
         {/* タブ切り替え */}
+        <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
         <div className="flex justify-center mb-8">
           <button
             onClick={() => setActiveTab('skills')}
@@ -100,9 +111,15 @@ export default function SkillsPage() {
             資格一覧
           </button>
         </div>
+        </motion.div>
         
         {activeTab === 'skills' ? (
           <>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <div className="mb-8 flex flex-wrap justify-center gap-4">
               {skillCategories.map((category) => (
                 <button
@@ -118,7 +135,13 @@ export default function SkillsPage() {
                 </button>
               ))}
             </div>
-
+          </motion.div>
+            
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -137,6 +160,7 @@ export default function SkillsPage() {
                 )
               ))}
             </motion.div>
+          </motion.div>
 
             <SkillLevelDescription />
           </>
