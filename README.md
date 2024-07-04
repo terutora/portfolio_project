@@ -1,40 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cheese'folio - ポートフォリオサイト
 
-## Getting Started
+## プロジェクト概要
 
-First, run the development server:
+Cheese'folioは、Next.jsを使用して構築された個人ポートフォリオサイトです。プロジェクト一覧、スキルセット、ブログ、お問い合わせフォームなどの機能を備えています。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 主な機能
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- レスポンシブデザイン
+- ダークモード/ライトモード切り替え
+- プロジェクト一覧表示
+- スキルセットの視覚化
+- ブログ投稿（Zenn、Noteの記事一覧）
+- お問い合わせフォーム（メール送信機能付き）
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 使用技術
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Next.js
+- React
+- Tailwind CSS
+- Framer Motion (アニメーション)
+- Nodemailer (メール送信)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## セットアップ
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. リポジトリのクローン:
+   ```
+   git clone https://github.com/yourusername/cheesefolio.git
+   cd cheesefolio
+   ```
 
-## Learn More
+2. 依存関係のインストール:
+   ```
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. 環境変数の設定:
+   `.env.local`ファイルをプロジェクトルートに作成し、以下の変数を設定:
+   ```
+   EMAIL_HOST=smtp.gmail.com
+   EMAIL_PORT=587
+   EMAIL_SECURE=false
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-password
+   EMAIL_TO=recipient-email@example.com
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. 開発サーバーの起動:
+   ```
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. ブラウザで`http://localhost:3000`にアクセス
 
-## Deploy on Vercel
+## デプロイ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+このプロジェクトはVercelにデプロイすることを推奨します。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. [Vercel](https://vercel.com/)でアカウントを作成
+2. Vercelダッシュボードで「New Project」を選択
+3. GitHubリポジトリをインポート
+4. 環境変数を設定
+5. デプロイボタンをクリック
+
+## コンタクト
+
+問い合わせやフィードバックは以下のメールアドレスまで:
+cheese877engineer@gmail.com
+
+## ライセンス
+
+このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
