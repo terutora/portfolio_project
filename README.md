@@ -18,9 +18,8 @@ Cheese'folioは、Next.jsを使用して構築された個人ポートフォリ�
 - Next.js
 - React
 - Tailwind CSS
-- Framer Motion (アニメーション)
-- Nodemailer (メール送信)
-
+- Framer Motion 
+- Nodemailer 
 ## セットアップ
 
 1. リポジトリのクローン:
@@ -51,16 +50,6 @@ Cheese'folioは、Next.jsを使用して構築された個人ポートフォリ�
    ```
 
 5. ブラウザで`http://localhost:3000`にアクセス
-
-## デプロイ
-
-このプロジェクトはVercelにデプロイすることを推奨します。
-
-1. [Vercel](https://vercel.com/)でアカウントを作成
-2. Vercelダッシュボードで「New Project」を選択
-3. GitHubリポジトリをインポート
-4. 環境変数を設定
-5. デプロイボタンをクリック
 
 ## コンタクト
 
