@@ -17,29 +17,26 @@ export const projects = [
       teamSize: 1,
       role: "すべての開発"
     },
-  /*
     {
-      id: 5,
-      title: "AI駆動型医療診断支援システム",
-      description: "機械学習とコンピュータビジョンを活用して、X線画像から肺疾患を自動的に検出・分類するシステムを開発しました。医療従事者の診断プロセスを支援し、早期発見率の向上に貢献しています。",
-      longDescription: "このプロジェクトでは、深層学習モデル（CNN）を使用して、胸部X線画像から肺炎、結核、COVID-19などの疾患を高精度で検出します。システムはPythonで実装され、TensorFlowとKerasを使用してモデルを構築しました。フロントエンドはReactで開発し、医師が使いやすいインターフェースを提供しています。バックエンドはDjango RESTフレームワークで構築され、AWSでホストされています。このシステムにより、診断の正確性が15%向上し、診断時間が平均30%短縮されました。",
-      imageUrl: "/images/ai-medical-diagnosis.jpg",
-      category: "医療テック",
-      technologies: ["Python", "TensorFlow", "React", "Django", "AWS"],
+      id: 2,
+      title: "x_word_splitter",
+      description: "文章140字分割システム",
+      longDescription: "このプロジェクトでは、長い文章を140字に分割するシステムを開発しました。このシステムにより、Twitterなどの140字制限のあるサービスでの文章投稿が容易になりました。",
+      imageUrl: "/images/x_split.png",
+      category: "ツール",
+      technologies: ["JavaScript","HTML","CSS"],
       features: [
-        "高精度な疾患検出アルゴリズム",
-        "直感的なユーザーインターフェース",
-        "リアルタイムな結果表示",
-        "患者データの安全な管理",
-        "医療記録との統合"
+        "長い文章を140字に分割",
+        "Twitterなどの140字制限のあるサービスでの文章投稿が容易になりました"
       ],
-      githubUrl: "https://github.com/yourusername/ai-medical-diagnosis",
-      liveUrl: "https://ai-medical-diagnosis-demo.com",
-      startDate: "2023-01-15",
-      endDate: "2023-08-30",
-      teamSize: 5,
-      role: "リードデベロッパー & 機械学習エンジニア"
+      githubUrl: "https://github.com/terutora/x_word_split",
+      liveUrl: "https://terutora.github.io/x_word_split/",
+      startDate: "2024-06-19",
+      endDate: "2024-06-19",
+      teamSize: 1,
+      role: "すべての開発"
     },
+    /*
     {
       id: 4,
       title: "ブロックチェーンベースの供給chain管理システム",
