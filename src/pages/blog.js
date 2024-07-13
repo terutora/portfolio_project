@@ -4,19 +4,55 @@ import Head from 'next/head';
 import BlogPostCard from '../components/blog/BlogPostCard';
 import { motion } from 'framer-motion';
 import Pagination from '../components/blog/Pagination';
+import Parser from 'rss-parser';
 
-// この関数は実際のAPIコールに置き換える必要があります
 export async function getStaticProps() {
-  // ZennとNoteのAPIから記事データを取得する
-  const zennPosts = [/* Zennの記事データ */];
-  const notePosts = [/* Noteの記事データ */];
-  
-  return {
-    props: {
-      posts: [...zennPosts, ...notePosts],
-    },
-    revalidate: 3600, // 1時間ごとに再生成
-  };
+  const parser = new Parser();
+  const zennFeedUrl = 'https://zenn.dev/your_username/feed'; // あなたのZennのユーザー名に置き換えてください
+
+  try {
+    // Zennの記事データを取得
+    const zennFeed = await parser.parseURL(zennFeedUrl);
+    const zennPosts = zennFeed.items.map(item => ({
+      id: item.guid,
+      title: item.title,
+      excerpt: item.contentSnippet?.substring(0, 100) + '...' || '',
+      url: item.link,
+      publishedAt: item.isoDate,
+      platform: 'zenn',
+      image: item.enclosure?.url || '/path/to/default/zenn-image.jpg' // デフォルト画像のパスを設定してください
+    }));
+
+    // Noteの記事データを取得（プレースホルダー）
+    // 実際の実装では、NoteのAPIやRSSフィードを使用してデータを取得します
+    const notePosts = [
+      {
+        id: 'note-1',
+        title: 'サンプルNoteタイトル',
+        excerpt: 'これはサンプルのNote記事の抜粋です...',
+        url: 'https://note.com/your_username/n/sample_note_id',
+        publishedAt: new Date().toISOString(),
+        platform: 'note',
+        image: '/path/to/default/note-image.jpg' // デフォルト画像のパスを設定してください
+      }
+      // 他のNoteの記事をここに追加...
+    ];
+
+    return {
+      props: {
+        posts: [...zennPosts, ...notePosts],
+      },
+      revalidate: 3600, // 1時間ごとに再生成
+    };
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    return {
+      props: {
+        posts: [],
+      },
+      revalidate: 60, // エラーが発生した場合、より短い間隔で再試行
+    };
+  }
 }
 
 export default function BlogPage({ posts }) {

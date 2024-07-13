@@ -57,11 +57,11 @@ const SkillLevelDescription = () => (
   <div className="mt-12 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
     <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-200">スキルレベルの説明</h3>
     <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-400">
-      <li>1星 - 初心者: 基本的な概念を理解し、簡単なタスクを実行できる</li>
-      <li>2星 - 基礎的: 主要な概念を理解し、指導のもとで作業できる</li>
-      <li>3星 - 中級者: 独立して作業でき、複雑なタスクを処理できる</li>
-      <li>4星 - 上級者: 深い知識を持ち、他者を指導できる</li>
-      <li>5星 - エキスパート: 高度な知識を持ち、革新的なソリューションを提供できる</li>
+      <li>星1 - 初心者: 基本的な概念を理解し、簡単なタスクを実行できる</li>
+      <li>星2 - 基礎的: 主要な概念を理解し、指導のもとで作業できる</li>
+      <li>星3 - 中級者: 独立して作業でき、複雑なタスクを処理できる</li>
+      <li>星4 - 上級者: 深い知識を持ち、他者を指導できる</li>
+      <li>星5 - エキスパート: 高度な知識を持ち、革新的なソリューションを提供できる</li>
     </ul>
   </div>
   </motion.div>
