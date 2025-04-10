@@ -1,38 +1,38 @@
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+// src/pages/projects/index.js の修正
 
-const ProjectList = ({ projects }) => {
-  console.log('Projects:', projects); // デバッグ用ログ
+import Head from "next/head";
+import Layout from "../../components/layout/Layout";
+import ProjectList from "../../components/project/ProjectList";
+import { projects } from "../../data/projects";
+import { motion } from "framer-motion";
 
+export function getStaticProps() {
+  console.log("Static Props Projects:", projects); // デバッグ用ログ
+
+  // プロジェクトの配列を逆順にして、新しいプロジェクトが先頭に来るようにする
+  const reversedProjects = [...projects].reverse();
+
+  return {
+    props: {
+      projects: reversedProjects,
+    },
+  };
+}
+
+export default function ProjectsPage({ projects }) {
+  console.log("Client-side Projects:", projects); // デバッグ用ログ
   return (
-    <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projects.map((project) => {
-        console.log('Project:', project); // 各プロジェクトのデバッグ用ログ
-        if (!project || !project.id) {
-          console.error('Invalid project:', project); // エラーログ
-          return null; // 無効なプロジェクトはスキップ
-        }
-        return (
-          <div key={project.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-            <Link
-              href={`/projects/${project.id}`}
-              className="block p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-300"
-            >
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
-            </Link>
-          </div>
-        );
-      })}
-    </div>
-    </motion.div>
+    <Layout>
+      <Head>
+        <title>プロジェクト一覧 | Cheese&aposfolio</title>
+        <meta name="description" content="Yukiのプロジェクト一覧です。" />
+      </Head>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <motion.h1 className="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          プロジェクト
+        </motion.h1>
+        <ProjectList projects={projects} />
+      </div>
+    </Layout>
   );
-};
-
-export default ProjectList;
+}
